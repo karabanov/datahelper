@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "datahelper",
+  "version": "0.1",
+  "background": {
+  "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [ "*://billing.datacom.ru/pskov/tp/zajavka.php*" ],
+      "css": ["mystyles.css"],
+      "js": ["content.js"]
+    }
+  ],
+  "permissions": [
+    "tabs", "*://billing.datacom.ru/*", "*://10.165.49.5/*"
+  ],
+  "icons": {
+    "128": "128.png"
+  },
+  "web_accessible_resources": [
+    "/injected.js"
+  ]
+}
