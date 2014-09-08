@@ -110,9 +110,9 @@ gxnr.onreadystatechange = function()
 
 
         if((datainfo.MAC.vendor !== undefined || datainfo.MAC.vendor !== '') && gmac !== '00:00:00:00:00:00'){newDiv.innerHTML = 'Устройство абоннета <b>' + datainfo.MAC.vendor + '</b><br>';}
-        if(datainfo.MAC.vlan !== undefined){ newDiv.innerHTML = newDiv.innerHTML + 'VLAN <b>' + datainfo.MAC.vlan + '</b><br>';}
-        if(datainfo.MAC.port !== undefined){ newDiv.innerHTML = newDiv.innerHTML + 'Порт <b>' + datainfo.MAC.port + '</b><br>';}
-        if(datainfo.MAC.district !== undefined){ newDiv.innerHTML = newDiv.innerHTML + 'Район <b>' + datainfo.MAC.district + '</b><br>';}
+        //if(datainfo.MAC.vlan !== undefined){ newDiv.innerHTML = newDiv.innerHTML + 'VLAN <b>' + datainfo.MAC.vlan + '</b><br>';}
+        //if(datainfo.MAC.port !== undefined){ newDiv.innerHTML = newDiv.innerHTML + 'Порт <b>' + datainfo.MAC.port + '</b><br>';}
+        //if(datainfo.MAC.district !== undefined){ newDiv.innerHTML = newDiv.innerHTML + 'Район <b>' + datainfo.MAC.district + '</b><br>';}
 
 
         if(datainfo.BRASES)
@@ -135,7 +135,7 @@ gxnr.onreadystatechange = function()
           newDiv.innerHTML = newDiv.innerHTML + '<span style="color:blue;">Что бы у абонента появилась возможность пользоваться интернетом ему необходимо внести на счёт <b>' + (debt[0].innerHTML - balance[0].innerHTML) +' р.</b></span>';
         }
 
-        if(datainfo.BRASES !== undefined && datainfo.MAC.port == undefined && gmac !== '00:00:00:00:00:00')
+        if(datainfo.BRASES !== undefined && datainfo.MAC.status !== 'on_line' && gmac !== '00:00:00:00:00:00')
         {
           newDiv.innerHTML = newDiv.innerHTML + '<br><span style="color:blue;"><b>ВНИМАНИЕ!!!</b><br>Абонент подключен с IP 10.81.x.x <b> так как cменил оборудование</b> </span><br>';
         }
